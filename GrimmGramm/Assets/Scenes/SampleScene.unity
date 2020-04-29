@@ -300,6 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzles:
   - {fileID: 6137482603133946470, guid: 04b76e910da44d64a965f1eb4a60ea1f, type: 3}
+  - {fileID: 1332309207424329188, guid: 71ec74f81d62be04891c9abff1c0f9d2, type: 3}
   CurrentPuzzle: {fileID: 0}
 --- !u!4 &649318669
 Transform:
@@ -786,7 +787,7 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

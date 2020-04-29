@@ -21,7 +21,7 @@ public class Piece : MonoBehaviour
 
     void Update()
     {
-
+        
     }
 
     public void SetRotate(int rot){
@@ -50,6 +50,7 @@ public class Piece : MonoBehaviour
 
     void OnMouseDown(){
         Parent.Select(this);
+        print("Test");
     }
 
     void OnMouseUp(){

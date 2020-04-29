@@ -12,9 +12,9 @@ public class PuzzleBehavior : MonoBehaviour
     public int[] Ans_Shape;
     public bool ActiveSelection;
     public Piece Selected;
-    public Vector3 SelectedOffset;
+    private Vector3 SelectedOffset;
     public bool Completed = false;
-    public float fadeTime;
+    private float fadeTime;
     public GameObject VictoryImage;
     public GameObject Outline;
 
@@ -71,7 +71,7 @@ public class PuzzleBehavior : MonoBehaviour
                 if (System.Math.Abs(p.transform.position.x - Ans_X[a]) > 0.25) continue;
                 if(System.Math.Abs(p.transform.position.y - Ans_Y[a]) > 0.25) continue;
                 
-                if(p.PieceRotation != Ans_Rotation[a] && (p.shape == 1 || p.shape == 2 || p.shape == 3)) continue;
+                if(p.PieceRotation != Ans_Rotation[a] && p.shape != 0 && p.shape != 4) continue;
                 if(p.PieceRotation % 2 != Ans_Rotation[a]  && p.shape == 0) continue;
                 if(p.PieceRotation % 4 != Ans_Rotation[a] && p.shape == 4) continue;
 
