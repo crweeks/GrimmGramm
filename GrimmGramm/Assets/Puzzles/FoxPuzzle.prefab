@@ -731,7 +731,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6137482602959145931}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.72, z: 15.999504}
+  m_LocalPosition: {x: 0, y: -0.7, z: 15.999504}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6137482603133946469}
@@ -1228,21 +1228,19 @@ MonoBehaviour:
   - 1.85
   - -0.42
   - 0.58
-  - 1.49
+  - 1.45
   Ans_Y:
-  - -1.98
   - -1.26
-  - -1.15
-  - 0.22
-  - -0.64
-  - -0.62
-  - -0.27
+  - -0.54
+  - -0.43
+  - 0.89
+  - 0.12
+  - 0.1
+  - 0.41
   Ans_Rotation: 00000000000000000600000007000000050000000400000000000000
   Ans_Shape: 00000000040000000100000001000000020000000300000003000000
   ActiveSelection: 0
   Selected: {fileID: 0}
-  SelectedOffset: {x: 0, y: 0, z: 0}
   Completed: 0
-  fadeTime: 0
   VictoryImage: {fileID: 6137482602944666700}
   Outline: {fileID: 6137482602959145931}

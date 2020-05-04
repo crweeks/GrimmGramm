@@ -68,8 +68,8 @@ public class PuzzleBehavior : MonoBehaviour
             bool right = false;
             foreach(Piece p in Pieces){
                 if(p.shape != Ans_Shape[a]) continue;
-                if (System.Math.Abs(p.transform.position.x - Ans_X[a]) > 0.25) continue;
-                if(System.Math.Abs(p.transform.position.y - Ans_Y[a]) > 0.25) continue;
+                if (System.Math.Abs(p.transform.position.x - Outline.transform.position.x - Ans_X[a]) > 0.25) continue;
+                if(System.Math.Abs(p.transform.position.y - Outline.transform.position.y - Ans_Y[a]) > 0.25) continue;
                 
                 if(p.PieceRotation != Ans_Rotation[a] && p.shape != 0 && p.shape != 4) continue;
                 if(p.PieceRotation % 2 != Ans_Rotation[a]  && p.shape == 0) continue;
