@@ -8,6 +8,7 @@ public class SceneManagement : MonoBehaviour
     public GameObject mainMenu;
     public GameObject settings;
     public GameObject levelSelect;
+    public PuzzleMaker puzzleMaker;
 
     // Start is called before the first frame update
     void Start()
@@ -38,8 +39,15 @@ public class SceneManagement : MonoBehaviour
     public void LoadLevelSelect()
     {
         active.SetActive(false);
+        puzzleMaker.ShowPuzzle(-1);
         active = levelSelect;
         active.SetActive(true);
+    }
+
+    public void LoadLevel(int puz)
+    {
+        active.SetActive(false);
+        puzzleMaker.ShowPuzzle(puz);
     }
 
     public void Quit()
