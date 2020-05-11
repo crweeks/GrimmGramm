@@ -1991,6 +1991,8 @@ MonoBehaviour:
   Completed: 0
   VictoryImage: {fileID: 4711230937812072353}
   Outline: {fileID: 4711230938527316060}
+  parent: {fileID: 0}
+  Cover: {fileID: 0}
 --- !u!1 &4711230938473304208
 GameObject:
   m_ObjectHideFlags: 0

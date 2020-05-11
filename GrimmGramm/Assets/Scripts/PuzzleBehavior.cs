@@ -14,9 +14,13 @@ public class PuzzleBehavior : MonoBehaviour
     public Piece Selected;
     private Vector3 SelectedOffset;
     public bool Completed = false;
-    private float fadeTime;
+    private bool nextTrigger = false;
+    private float startFade = 0;
+    private float winFade = 0;
+    private float endFade = 0;
     public GameObject VictoryImage;
     public GameObject Outline;
+    public PuzzleMaker parent;
 
     void Start()
     {
@@ -25,15 +29,6 @@ public class PuzzleBehavior : MonoBehaviour
             p.Parent = this;
             p.SetRotate(p.PieceRotation);
         }
-
-        //Answers = new List<float[]>();
-        //Answers.Add(new float[]{-5.24f, -2.76f, 0, 0});
-        //Answers.Add(new float[]{-4.85f, -2.04f, 0, 4});
-        //Answers.Add(new float[]{-3.97f, -1.93f, 6, 1});
-        //Answers.Add(new float[]{-1.17f, -0.60f, 7, 1});
-        //Answers.Add(new float[]{-3.49f, -1.43f, 5, 2});
-        //Answers.Add(new float[]{-2.50f, -1.40f, 4, 3});
-        //Answers.Add(new float[]{-1.56f, -1.08f, 0, 3});
     }
 
     void Update()
@@ -48,17 +43,34 @@ public class PuzzleBehavior : MonoBehaviour
                 Selected.IncRotate();
                 bool correct = CheckAnswers();
                 if (correct) TriggerVictory();
-                //print("rotate");
             }
         }
 
-        if(Completed){
-            fadeTime += Time.deltaTime;
-            foreach(Piece p in Pieces){
-                Fade(p.gameObject, 1, 0, fadeTime);
+        
+        if (Completed){
+            winFade += Time.deltaTime;
+            foreach (Piece p in Pieces){
+                FadeCalc(p.gameObject, 1, 0, winFade / parent.win_transition_length);
             }
-            Fade(VictoryImage, 0, 1, fadeTime);
-            Fade(Outline, 0.5f, 0, fadeTime);
+            FadeCalc(VictoryImage, 0, 1, winFade / parent.win_transition_length);
+            FadeCalc(Outline, 0.5f, 0, winFade / parent.win_transition_length);
+
+            if(winFade > parent.win_transition_length && !nextTrigger)
+            {
+                nextTrigger = true;
+                parent.nextLevel();
+            }
+
+            if (winFade > parent.win_transition_length + parent.level_transition_delay)
+            {
+                endFade += Time.deltaTime;
+                FadeCalc(parent.FadeCover, 0, 1, 2 * endFade / parent.level_transition_length);
+            }
+        }
+        else
+        {
+            startFade += Time.deltaTime;
+            FadeCalc(parent.FadeCover, 1, 0, 2 * startFade / parent.level_transition_length);
         }
     }
 
@@ -104,10 +116,10 @@ public class PuzzleBehavior : MonoBehaviour
 
     public void TriggerVictory(){
         Completed = true;
-        fadeTime = 0;
+        winFade = 0;
     }
 
-    private void Fade(GameObject gameObject, float st, float fi, float ft){
+    private void FadeCalc(GameObject gameObject, float st, float fi, float ft){
         Color c = gameObject.GetComponent<SpriteRenderer>().color;
         gameObject.GetComponent<SpriteRenderer>().color = new Color(c.r, c.g, c.b, Mathf.Lerp(st, fi, ft));
     }
