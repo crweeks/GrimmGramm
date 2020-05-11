@@ -31,6 +31,8 @@ public class PuzzleMaker : MonoBehaviour
         }
         else
         {
+            Color c = FadeCover.GetComponent<SpriteRenderer>().color;
+            FadeCover.GetComponent<SpriteRenderer>().color = new Color(c.r, c.g, c.b, 1);
             CurrentPuzzle = Instantiate(puzzles[puzzle_number], new Vector3(0, 0, 0), Quaternion.identity);
             CurrentPuzzle.parent = this;
             quitButton.SetActive(true);
