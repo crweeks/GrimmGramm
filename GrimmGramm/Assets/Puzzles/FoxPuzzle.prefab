@@ -1244,3 +1244,5 @@ MonoBehaviour:
   Completed: 0
   VictoryImage: {fileID: 6137482602944666700}
   Outline: {fileID: 6137482602959145931}
+  parent: {fileID: 0}
+  rotation: 1

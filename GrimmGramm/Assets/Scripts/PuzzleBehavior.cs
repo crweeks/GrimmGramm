@@ -21,6 +21,7 @@ public class PuzzleBehavior : MonoBehaviour
     public GameObject VictoryImage;
     public GameObject Outline;
     public PuzzleMaker parent;
+    public bool rotation = false;
 
     void Start()
     {
@@ -37,7 +38,7 @@ public class PuzzleBehavior : MonoBehaviour
             Selected.MoveTo(getMouse() + SelectedOffset);
         }
 
-        if (Input.GetMouseButtonDown(1) && !Completed)
+        if (Input.GetMouseButtonDown(1) && !Completed && rotation)
         {
             if(Selected != null){
                 Selected.IncRotate();
