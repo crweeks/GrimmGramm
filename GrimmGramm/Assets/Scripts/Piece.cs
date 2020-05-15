@@ -6,6 +6,9 @@ public class Piece : MonoBehaviour
 {
     public PuzzleBehavior Parent;
     private Vector3 StartPosition;
+    private Color orig;
+    private float fadeTime = 10.0f;
+    public bool correct = false;
     public int PieceRotation = 0;
     public int shape;
     //0 = square
@@ -16,12 +19,25 @@ public class Piece : MonoBehaviour
 
     void Start()
     {
-        StartPosition = transform.position; 
+        StartPosition = transform.position;
+        orig = GetComponent<SpriteRenderer>().color;
     }
 
     void Update()
     {
-        
+        if (!Parent.Completed)
+        {
+            if (GetComponent<SpriteRenderer>().color != orig)
+            {
+                fadeTime -= Time.deltaTime;
+                GetComponent<SpriteRenderer>().color = Color.Lerp(orig, GetComponent<SpriteRenderer>().color, fadeTime);
+                print(fadeTime);
+            }
+            else
+            {
+                fadeTime = 10.0f;
+            }
+        }
     }
 
     public void SetRotate(int rot){
@@ -55,5 +71,16 @@ public class Piece : MonoBehaviour
 
     void OnMouseUp(){
         Parent.Deselect(this);
+    }
+
+    public void Darken()
+    {
+        GetComponent<SpriteRenderer>().color = new Color(orig.r * 0.6f, orig.g * 0.6f, orig.b * 0.6f);
+    }
+
+    public void Lighten()
+    {
+        GetComponent<SpriteRenderer>().color = orig;
+        fadeTime = 10.0f;
     }
 }

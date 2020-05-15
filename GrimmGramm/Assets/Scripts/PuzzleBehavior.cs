@@ -68,14 +68,36 @@ public class PuzzleBehavior : MonoBehaviour
             bool right = false;
             foreach(Piece p in Pieces){
                 if(p.shape != Ans_Shape[a]) continue;
-                if (System.Math.Abs(p.transform.position.x - Outline.transform.position.x - Ans_X[a]) > 0.25) continue;
-                if(System.Math.Abs(p.transform.position.y - Outline.transform.position.y - Ans_Y[a]) > 0.25) continue;
-                
-                if(p.PieceRotation != Ans_Rotation[a] && p.shape != 0 && p.shape != 4) continue;
-                if(p.PieceRotation % 2 != Ans_Rotation[a]  && p.shape == 0) continue;
-                if(p.PieceRotation % 4 != Ans_Rotation[a] && p.shape == 4) continue;
+                if (System.Math.Abs(p.transform.position.x - Outline.transform.position.x - Ans_X[a]) > 0.25)
+                {
+                    p.correct = false;
+                    continue;
+                }
+                if (System.Math.Abs(p.transform.position.y - Outline.transform.position.y - Ans_Y[a]) > 0.25)
+                {
+                    p.correct = false;
+                    continue;
+                }
+
+                if (p.PieceRotation != Ans_Rotation[a] && p.shape != 0 && p.shape != 4)
+                {
+                    p.correct = false;
+                    continue;
+                }
+                if (p.PieceRotation % 2 != Ans_Rotation[a] && p.shape == 0)
+                {
+                    p.correct = false;
+                    continue;
+                }
+                if (p.PieceRotation % 4 != Ans_Rotation[a] && p.shape == 4)
+                {
+                    p.correct = false;
+                    continue;
+                }
 
                 right = true;
+                p.GetComponent<Animator>().SetBool("PieceGrow", true);
+                p.correct = true;
             }
             if(right){
                 num_correct += 1;
@@ -91,6 +113,8 @@ public class PuzzleBehavior : MonoBehaviour
     }
 
     public void Select(Piece p){
+        p.GetComponent<Animator>().SetBool("PieceGrow", true);
+        p.GetComponent<Animator>().SetBool("PieceShrink", false);
         ActiveSelection = true;
         Selected = p;
         SelectedOffset = Selected.transform.position - getMouse();
@@ -98,8 +122,19 @@ public class PuzzleBehavior : MonoBehaviour
 
     public void Deselect(Piece p){
         ActiveSelection = false;
+        p.GetComponent<Animator>().SetBool("PieceGrow", false);
+        p.GetComponent<Animator>().SetBool("PieceShrink", true);
         bool correct = CheckAnswers();
-        if(correct) TriggerVictory();
+        print(p.correct);
+        if (p.correct)
+        {
+            p.Darken();
+        }
+        else
+        {
+            p.Lighten();
+        }
+        if (correct) TriggerVictory();
     }
 
     public void TriggerVictory(){
