@@ -104,6 +104,7 @@ public class PuzzleBehavior : MonoBehaviour
         {
             if (Ans_Locked[a])
             {
+                p.GetComponent<Animator>().SetBool("PieceGrow", true);
                 num_correct += 1;
             }
         }
@@ -117,6 +118,8 @@ public class PuzzleBehavior : MonoBehaviour
     }
 
     public void Select(Piece p){
+        p.GetComponent<Animator>().SetBool("PieceGrow", true);
+        p.GetComponent<Animator>().SetBool("PieceShrink", false);
         ActiveSelection = true;
         Selected = p;
         SelectedOffset = Selected.transform.position - getMouse();
@@ -125,6 +128,19 @@ public class PuzzleBehavior : MonoBehaviour
     public void Deselect(Piece p){
         ActiveSelection = false;
         CheckPiece(p);
+        p.GetComponent<Animator>().SetBool("PieceGrow", false);
+        p.GetComponent<Animator>().SetBool("PieceShrink", true);
+        bool correct = CheckAnswers();
+        print(p.correct);
+        if (p.correct)
+        {
+            p.Darken();
+        }
+        else
+        {
+            p.Lighten();
+        }
+        if (correct) TriggerVictory();
     }
 
     public void TriggerVictory(){
