@@ -5,9 +5,12 @@ using UnityEngine;
 public class Piece : MonoBehaviour
 {
     public PuzzleBehavior Parent;
+    public Color PieceColor;
     private Vector3 StartPosition;
     public int PieceRotation = 0;
     public int shape;
+    public int symmetry = 0;
+    private bool locked = false;
     //0 = square
     //1 = small triangle
     //2 = medium triangle
@@ -48,9 +51,23 @@ public class Piece : MonoBehaviour
         transform.position = StartPosition;
     }
 
-    void OnMouseDown(){
-        Parent.Select(this);
-        print("Test");
+    public void LockPiece(Vector3 target)
+    {
+        locked = true;
+        transform.position = target;
+    }
+
+    public bool IsLocked()
+    {
+        return locked;
+    }
+
+    void OnMouseDown()
+    {
+        if (!locked)
+        {
+            Parent.Select(this);
+        }
     }
 
     void OnMouseUp(){
