@@ -23,9 +23,11 @@ public class PuzzleBehavior : MonoBehaviour
     public GameObject Outline;
     public PuzzleMaker parent;
     public bool rotation = false;
+    private int od;
 
     void Start()
     {
+        od = 0;
         ActiveSelection = false;
         Ans_Locked = new List<bool>();
         foreach (Piece p in Pieces){
@@ -92,8 +94,7 @@ public class PuzzleBehavior : MonoBehaviour
 
             p.LockPiece(new Vector3(Ans_X[a] + Outline.transform.position.x, Ans_Y[a] + Outline.transform.position.y, 0));
             Ans_Locked[a] = true;
-            bool correct = CheckAnswers();
-            if (correct) TriggerVictory();
+            if (CheckAnswers()) TriggerVictory();
             return;
         }
     }
@@ -104,7 +105,6 @@ public class PuzzleBehavior : MonoBehaviour
         {
             if (Ans_Locked[a])
             {
-                p.GetComponent<Animator>().SetBool("PieceGrow", true);
                 num_correct += 1;
             }
         }
@@ -118,29 +118,24 @@ public class PuzzleBehavior : MonoBehaviour
     }
 
     public void Select(Piece p){
-        p.GetComponent<Animator>().SetBool("PieceGrow", true);
-        p.GetComponent<Animator>().SetBool("PieceShrink", false);
+        p.Grow();
         ActiveSelection = true;
         Selected = p;
         SelectedOffset = Selected.transform.position - getMouse();
+        od += 1;
+        p.setOrder(od);
     }
 
     public void Deselect(Piece p){
         ActiveSelection = false;
         CheckPiece(p);
-        p.GetComponent<Animator>().SetBool("PieceGrow", false);
-        p.GetComponent<Animator>().SetBool("PieceShrink", true);
-        bool correct = CheckAnswers();
-        print(p.correct);
-        if (p.correct)
-        {
-            p.Darken();
+        if (p.IsLocked()){
+            p.Darken();
         }
-        else
-        {
-            p.Lighten();
+        else
+        {
+            p.Shrink();
         }
-        if (correct) TriggerVictory();
     }
 
     public void TriggerVictory(){

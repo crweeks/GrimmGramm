@@ -16,6 +16,7 @@ public class PuzzleMaker : MonoBehaviour
     public float level_transition_delay;
 
     public GameObject FadeCover;
+    public SceneManagement parent;
 
     public void ShowPuzzle(int puzzle_number) //Brian - Use this to create/show puzzles from main menu
     {
@@ -47,7 +48,11 @@ public class PuzzleMaker : MonoBehaviour
     public void nextInv()
     {
         currId += 1;
-        ShowPuzzle(currId);
+        if(currId >= puzzles.Count)
+        {
+            parent.LoadLevelSelect();
+        }
+        //ShowPuzzle(currId);
     }
 
     void Start()

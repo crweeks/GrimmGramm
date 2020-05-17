@@ -13,6 +13,7 @@ public class SceneManagement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        puzzleMaker.parent = this;
         active = mainMenu;
     }
 

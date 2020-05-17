@@ -261,16 +261,17 @@ MonoBehaviour:
   quitButton: {fileID: 6042437739876668398}
   levelSelect: {fileID: 132524130254425518}
   puzzles:
-  - {fileID: 6137482603133946470, guid: 04b76e910da44d64a965f1eb4a60ea1f, type: 3}
-  - {fileID: 1332309207424329188, guid: 71ec74f81d62be04891c9abff1c0f9d2, type: 3}
+  - {fileID: 515747431426046413, guid: 9398bd1a84a5f324f9ca43dae078af82, type: 3}
   - {fileID: 4711230938385344660, guid: 52b83e28bd049ae46be1cf37c9ba0a7e, type: 3}
   - {fileID: 1814600090699387442, guid: 2282e8c9e007f2a439e55153eb54d6e8, type: 3}
+  - {fileID: 278653651097850550, guid: 85b36ffd041f22c419068e0cf19f0313, type: 3}
   CurrentPuzzle: {fileID: 0}
   currId: 0
   win_transition_length: 1
   level_transition_length: 1
   level_transition_delay: 3
   FadeCover: {fileID: 8893185536812673449}
+  parent: {fileID: 0}
 --- !u!1 &1933859046282797340
 GameObject:
   m_ObjectHideFlags: 0
