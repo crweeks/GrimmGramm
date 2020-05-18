@@ -48,11 +48,14 @@ public class PuzzleMaker : MonoBehaviour
     public void nextInv()
     {
         currId += 1;
-        if(currId >= puzzles.Count)
+        if (currId >= puzzles.Count)
         {
             parent.LoadLevelSelect();
         }
-        //ShowPuzzle(currId);
+        else
+        {
+            ShowPuzzle(currId);
+        }
     }
 
     void Start()
