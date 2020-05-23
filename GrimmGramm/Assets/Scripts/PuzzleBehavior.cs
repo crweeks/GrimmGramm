@@ -15,6 +15,7 @@ public class PuzzleBehavior : MonoBehaviour
     public Piece Selected;
     private Vector3 SelectedOffset;
     public bool Completed = false;
+    private bool animTrigger = false;
     private bool nextTrigger = false;
     private float startFade = 0;
     private float winFade = 0;
@@ -24,6 +25,7 @@ public class PuzzleBehavior : MonoBehaviour
     public PuzzleMaker parent;
     public bool rotation = false;
     private int od;
+    public PuzzleAnimation pa;
 
     void Start()
     {
@@ -51,31 +53,48 @@ public class PuzzleBehavior : MonoBehaviour
                 if (correct) TriggerVictory();
             }
         }
-        
-        if (Completed){
+
+        if (Completed)
+        {
             winFade += Time.deltaTime;
-            foreach (Piece p in Pieces){
+            foreach (Piece p in Pieces)
+            {
                 FadeCalc(p.gameObject, 1, 0, winFade / parent.win_transition_length);
             }
-            FadeCalc(VictoryImage, 0, 1, winFade / parent.win_transition_length);
             FadeCalc(Outline, 0.5f, 0, winFade / parent.win_transition_length);
+            FadeCalc(VictoryImage, 0, 1, winFade / parent.win_transition_length);
 
-            if(winFade > parent.win_transition_length && !nextTrigger)
-            {
-                nextTrigger = true;
-                parent.nextLevel();
-            }
-
-            if (winFade > parent.win_transition_length + parent.level_transition_delay)
+            if (!pa.running && animTrigger)
             {
                 endFade += Time.deltaTime;
                 FadeCalc(parent.FadeCover, 0, 1, 2 * endFade / parent.level_transition_length);
             }
+
+            if (winFade > parent.win_transition_length && !animTrigger)
+            {
+                print("Starting Animation 1");
+                animTrigger = true;
+                pa.StartAnimation();
+            }
+
+            if (!pa.running && animTrigger && !nextTrigger)
+            {
+                nextTrigger = true;
+                parent.nextLevel();
+            }
         }
         else
         {
-            startFade += Time.deltaTime;
-            FadeCalc(parent.FadeCover, 1, 0, 2 * startFade / parent.level_transition_length);
+            if (startFade < parent.level_transition_length / 2)
+            {
+                startFade += Time.deltaTime;
+                FadeCalc(parent.FadeCover, 1, 0, 2 * startFade / parent.level_transition_length);
+            }
+            else
+            {
+                //Completed = true;
+            }
+
         }
     }
 
@@ -140,7 +159,6 @@ public class PuzzleBehavior : MonoBehaviour
 
     public void TriggerVictory(){
         Completed = true;
-        winFade = 0;
     }
 
     private void FadeCalc(GameObject gameObject, float st, float fi, float ft){

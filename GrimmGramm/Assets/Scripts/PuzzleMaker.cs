@@ -42,7 +42,7 @@ public class PuzzleMaker : MonoBehaviour
 
     public void nextLevel()
     {
-        Invoke("nextInv", level_transition_delay + level_transition_length / 2);
+        Invoke("nextInv", level_transition_length / 2);
     }
 
     public void nextInv()

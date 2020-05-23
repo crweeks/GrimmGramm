@@ -1,5 +1,51 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1644193844208147450
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3642437501029087764}
+  - component: {fileID: 5447330406164802612}
+  m_Layer: 0
+  m_Name: WolfAnimator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3642437501029087764
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644193844208147450}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.30722374, y: -0.27151293, z: -7.3693714}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4711230938385344651}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5447330406164802612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644193844208147450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72b14d1b93ae0c847b74b65768d66c3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  running: 0
+  BackCover: {fileID: 6383760014246350983}
+  Wolf: {fileID: 4711230937812072353}
 --- !u!1 &4711230937172139263
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,8 +238,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4711230937206074233}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.21, y: 1.69, z: 2.5515273}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4.13, y: 1.71, z: 2.5515273}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 4711230937934405772}
   m_RootOrder: 3
@@ -602,7 +648,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4711230937440816928}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.32, y: -1.75, z: 2.5515273}
+  m_LocalPosition: {x: -3.54, y: -2.07, z: 2.5515273}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 4711230937934405772}
@@ -1490,7 +1536,7 @@ Transform:
   m_GameObject: {fileID: 4711230937899685535}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.15, y: 1.16, z: 2.5515273}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 4711230937934405772}
   m_RootOrder: 5
@@ -2204,6 +2250,7 @@ Transform:
   - {fileID: 4711230938527316051}
   - {fileID: 4711230937934405772}
   - {fileID: 567289630021812976}
+  - {fileID: 3642437501029087764}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2290,6 +2337,7 @@ MonoBehaviour:
   Outline: {fileID: 4711230938527316060}
   parent: {fileID: 0}
   rotation: 0
+  pa: {fileID: 5447330406164802612}
 --- !u!1 &4711230938473304208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2318,8 +2366,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4711230938473304208}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.18, y: 3.14, z: 2.5515273}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.18, y: 3.01, z: 2.5515273}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 4711230937934405772}
   m_RootOrder: 1
@@ -3222,8 +3270,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4711230938932129889}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.55, y: -2.78, z: 2.5515273}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 3.57, y: -2.86, z: 2.5515273}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children: []
   m_Father: {fileID: 4711230937934405772}
   m_RootOrder: 13
@@ -3349,7 +3397,7 @@ Animator:
   m_GameObject: {fileID: 4711230938932129889}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d75bc9d63e4a4044d8b24799e611b6bb, type: 2}
+  m_Controller: {fileID: 9100000, guid: 01584e8dfa269364baa40757a6515ab1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

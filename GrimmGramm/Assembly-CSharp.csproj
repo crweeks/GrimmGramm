@@ -55,10 +55,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\HawkAnimation.cs" />
+     <Compile Include="Assets\Scripts\HawkAnimation2.cs" />
+     <Compile Include="Assets\Scripts\HoodAnimation.cs" />
      <Compile Include="Assets\Scripts\Piece.cs" />
+     <Compile Include="Assets\Scripts\PuzzleAnimation.cs" />
      <Compile Include="Assets\Scripts\PuzzleBehavior.cs" />
      <Compile Include="Assets\Scripts\PuzzleMaker.cs" />
      <Compile Include="Assets\Scripts\SceneManagement.cs" />
+     <Compile Include="Assets\Scripts\WolfAnimation.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Repositories/GrimmGramm/GrimmGramm/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
