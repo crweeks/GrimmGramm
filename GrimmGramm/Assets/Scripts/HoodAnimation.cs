@@ -21,27 +21,52 @@ public class HoodAnimation : PuzzleAnimation
 
     void Update()
     {
-        running = false;
-        /*//print(running);
+        //print(running);
         if (running)
         {
             t += Time.deltaTime;
             if (t < 1)
             {
-
+                //Show full image
             }
             else if (t < 2)
             {
-                FadeCalc(Hawk, 1f, 0, (t - 1f));
+                FadeCalc(Hood, 1f, 0, (t - 1f));
             }
-            else if (t < 3)
+            else if (t < 4f)
             {
-                Hawk.transform.position = new Vector3(-7.31f, 1.99f, 0);
-                Hawk.transform.localScale = new Vector3(0.45f, 0.45f, 1.0f);
+                Hood.transform.position = new Vector3(-4.5f, -1f, 0);
+                Hood.transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
 
-                FadeCalc(Hawk, 0f, 1f, (t - 2f));
+                FadeCalc(Hood, 0f, 1f, (t - 2f));
             }
-            if (t > 4) running = false;
-        }*/
+            else if (t < 5)
+            {
+                FadeCalc(Hood, 1f, 0f, (t - 4f));
+            }
+            else if (t < 7)
+            {
+                Hood.transform.position = new Vector3(0f, 0f, 0);
+                Hood.transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
+
+                FadeCalc(Hood, 0f, 1f, (t - 5f));
+            }
+            else if (t < 8f)
+            {
+                FadeCalc(Hood, 1f, 0f, (t - 7f));
+            }
+            else if (t < 10f)
+            {
+                Hood.transform.position = new Vector3(4.5f, 1f, 0);
+                Hood.transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
+
+                FadeCalc(Hood, 0f, 1f, (t - 8f));
+            }
+            else
+            {
+                FadeCalc(Hood, 1f, 0f, (t - 10f));
+            }
+            if (t > 11f) running = false;
+        }
     }
 }

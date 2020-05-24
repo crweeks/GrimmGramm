@@ -61,8 +61,12 @@ public class PuzzleBehavior : MonoBehaviour
             {
                 FadeCalc(p.gameObject, 1, 0, winFade / parent.win_transition_length);
             }
-            FadeCalc(Outline, 0.5f, 0, winFade / parent.win_transition_length);
-            FadeCalc(VictoryImage, 0, 1, winFade / parent.win_transition_length);
+
+            if (!animTrigger)
+            {
+                FadeCalc(Outline, 0.5f, 0, winFade / parent.win_transition_length);
+                FadeCalc(VictoryImage, 0, 1, winFade / parent.win_transition_length);
+            }
 
             if (!pa.running && animTrigger)
             {
@@ -137,6 +141,7 @@ public class PuzzleBehavior : MonoBehaviour
     }
 
     public void Select(Piece p){
+        if (p.IsLocked()) return;
         p.Grow();
         ActiveSelection = true;
         Selected = p;

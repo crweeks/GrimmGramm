@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class WolfAnimation : PuzzleAnimation
 {
-    public GameObject BackCover;
+    public GameObject FrontCover;
     public GameObject Wolf;
+    public GameObject Eyes;
     private Vector3 WolfPosition;
     private float t = 0;
 
@@ -21,8 +22,7 @@ public class WolfAnimation : PuzzleAnimation
 
     void Update()
     {
-        running = false;
-        /*//print(running);
+        //print(running);
         if (running)
         {
             t += Time.deltaTime;
@@ -30,18 +30,13 @@ public class WolfAnimation : PuzzleAnimation
             {
 
             }
-            else if (t < 2)
-            {
-                FadeCalc(Hawk, 1f, 0, (t - 1f));
-            }
             else if (t < 3)
             {
-                Hawk.transform.position = new Vector3(-7.31f, 1.99f, 0);
-                Hawk.transform.localScale = new Vector3(0.45f, 0.45f, 1.0f);
+                FadeCalc(FrontCover, 0f, 1f, (t - 1f) / 2);
 
-                FadeCalc(Hawk, 0f, 1f, (t - 2f));
+                FadeCalc(Eyes, 0f, 1f, (t - 1f) / 2);
             }
-            if (t > 4) running = false;
-        }*/
+            if (t > 3) running = false;
+        }
     }
 }
