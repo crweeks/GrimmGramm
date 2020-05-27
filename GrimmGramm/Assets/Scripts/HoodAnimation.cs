@@ -6,6 +6,10 @@ public class HoodAnimation : PuzzleAnimation
 {
     public GameObject BackCover;
     public GameObject Hood;
+    public GameObject Hawk;
+    public GameObject Tree1;
+    public GameObject Tree2;
+
     private Vector3 HoodPosition;
     private float t = 0;
 
@@ -27,46 +31,32 @@ public class HoodAnimation : PuzzleAnimation
             t += Time.deltaTime;
             if (t < 1)
             {
-                //Show full image
-            }
-            else if (t < 2)
-            {
-                FadeCalc(Hood, 1f, 0, (t - 1f));
-            }
-            else if (t < 4f)
-            {
-                Hood.transform.position = new Vector3(-4.5f, -1f, 0);
-                Hood.transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
-
-                FadeCalc(Hood, 0f, 1f, (t - 2f));
-            }
-            else if (t < 5)
-            {
-                FadeCalc(Hood, 1f, 0f, (t - 4f));
+                //FadeCalc(BackCover, 0.25f, 0, t);
+                FadeCalc(Hawk, 1f, 0, t);
             }
             else if (t < 7)
             {
-                Hood.transform.position = new Vector3(0f, 0f, 0);
-                Hood.transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
+                float time = Mathf.SmoothStep(0.0f, 1.0f, (t - 1f) / 4.0f);
+                float newScale = Mathf.Lerp(2.0f, 1.0f, time);
 
-                FadeCalc(Hood, 0f, 1f, (t - 5f));
-            }
-            else if (t < 8f)
-            {
-                FadeCalc(Hood, 1f, 0f, (t - 7f));
-            }
-            else if (t < 10f)
-            {
-                Hood.transform.position = new Vector3(4.5f, 1f, 0);
-                Hood.transform.localScale = new Vector3(0.5f, 0.5f, 1.0f);
+                Hood.transform.localScale = new Vector3(newScale, newScale, 1.0f);
+                float newX = Mathf.Lerp(HoodPosition.x, 0f, time);
+                float newY = Mathf.Lerp(HoodPosition.y, 0f, time);
+                Hood.transform.position = new Vector3(newX, newY, 0.0f);
 
-                FadeCalc(Hood, 0f, 1f, (t - 8f));
+                float newScale2 = Mathf.Lerp(1.0f, 2.0f, time);
+                Tree1.transform.localScale = new Vector3(newScale2, newScale2, 1.0f);
+                Tree2.transform.localScale = new Vector3(newScale2, newScale2, 1.0f);
+
+                float newX1 = Mathf.Lerp(0.07f, 7.36f, time);
+                float newY1 = Mathf.Lerp(-0.05f, -2.66f, time);
+                Tree1.transform.position = new Vector3(newX1, newY1, 0.0f);
+
+                float newX2 = Mathf.Lerp(-0.12f, -6.04f, time);
+                float newY2 = Mathf.Lerp(0f, 2.96f, time);
+                Tree2.transform.position = new Vector3(newX2, newY2, 0.0f);
             }
-            else
-            {
-                FadeCalc(Hood, 1f, 0f, (t - 10f));
-            }
-            if (t > 11f) running = false;
+            if (t > 7.0f) running = false;
         }
     }
 }

@@ -45,8 +45,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   running: 0
   FrontCover: {fileID: 6889638667005149779}
+  BackCover: {fileID: 6383760014246350983}
   Wolf: {fileID: 4711230937812072353}
   Eyes: {fileID: 5968685080201061794}
+  Hawk: {fileID: 2633369998625570264}
 --- !u!1 &2633369998625570264
 GameObject:
   m_ObjectHideFlags: 0
@@ -1532,8 +1534,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4711230937812072353}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.5515273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.9, y: -0.04, z: 2.5515273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4711230938385344651}
@@ -3839,8 +3841,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5968685080201061794}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.5515273}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.9, y: -0.03999999, z: 2.5515273}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4711230938385344651}

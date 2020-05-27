@@ -5,8 +5,10 @@ using UnityEngine;
 public class WolfAnimation : PuzzleAnimation
 {
     public GameObject FrontCover;
+    public GameObject BackCover;
     public GameObject Wolf;
     public GameObject Eyes;
+    public GameObject Hawk;
     private Vector3 WolfPosition;
     private float t = 0;
 
@@ -28,15 +30,32 @@ public class WolfAnimation : PuzzleAnimation
             t += Time.deltaTime;
             if (t < 1)
             {
-
+                //FadeCalc(BackCover, 0.25f, 0, t);
+                FadeCalc(Hawk, 1f, 0, t);
             }
-            else if (t < 3)
+            else if (t < 4)
             {
-                FadeCalc(FrontCover, 0f, 1f, (t - 1f) / 2);
+                float time = Mathf.SmoothStep(0.0f, 1.0f, (t - 1f) / 3.0f);
+                float newScale = Mathf.Lerp(1.0f, 3.5f, time);
+                Wolf.transform.localScale = new Vector3(newScale, newScale, 1.0f);
+                Eyes.transform.localScale = new Vector3(newScale, newScale, 1.0f);
 
-                FadeCalc(Eyes, 0f, 1f, (t - 1f) / 2);
+                float newX = Mathf.Lerp(WolfPosition.x, -8.0f, time);
+                float newY = Mathf.Lerp(WolfPosition.y, 0.14f, time);
+                Wolf.transform.position = new Vector3(newX, newY, 0.0f);
+                Eyes.transform.position = new Vector3(newX, newY, 0.0f);
             }
-            if (t > 3) running = false;
+            else if (t < 5)
+            {
+
+            }
+            else if (t < 7)
+            {
+                FadeCalc(FrontCover, 0f, 1f, (t - 5f) / 2);
+
+                FadeCalc(Eyes, 0f, 1f, (t - 5f) / 2);
+            }
+            if (t > 8) running = false;
         }
     }
 }
