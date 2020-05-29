@@ -96,7 +96,7 @@ public class PuzzleBehavior : MonoBehaviour
             }
             else
             {
-                Completed = true;
+                //Completed = true;
             }
 
         }

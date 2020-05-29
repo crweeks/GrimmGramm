@@ -12,6 +12,7 @@ public class HoodAnimation : PuzzleAnimation
 
     private Vector3 HoodPosition;
     private float t = 0;
+    private bool stillgoing;
 
     public void StartAnimation()
     {
@@ -26,8 +27,9 @@ public class HoodAnimation : PuzzleAnimation
     void Update()
     {
         //print(running);
-        if (running)
+        if (running || stillgoing)
         {
+            stillgoing = true;
             t += Time.deltaTime;
             if (t < 1)
             {
@@ -36,7 +38,7 @@ public class HoodAnimation : PuzzleAnimation
             }
             else if (t < 7)
             {
-                float time = Mathf.SmoothStep(0.0f, 1.0f, (t - 1f) / 4.0f);
+                float time = Mathf.SmoothStep(0.0f, 1.0f, (t - 1f) / 6.0f);
                 float newScale = Mathf.Lerp(2.0f, 1.0f, time);
 
                 Hood.transform.localScale = new Vector3(newScale, newScale, 1.0f);
@@ -56,7 +58,7 @@ public class HoodAnimation : PuzzleAnimation
                 float newY2 = Mathf.Lerp(0f, 2.96f, time);
                 Tree2.transform.position = new Vector3(newX2, newY2, 0.0f);
             }
-            if (t > 7.0f) running = false;
+            if (t > 6.0f) running = false;
         }
     }
 }
