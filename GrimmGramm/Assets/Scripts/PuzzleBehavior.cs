@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class PuzzleBehavior : MonoBehaviour
 {
@@ -142,6 +143,7 @@ public class PuzzleBehavior : MonoBehaviour
 
     public void Select(Piece p){
         if (p.IsLocked()) return;
+        parent.ClickControl.GetComponent<AudioSource>().Play();
         p.Grow();
         ActiveSelection = true;
         Selected = p;
@@ -155,6 +157,7 @@ public class PuzzleBehavior : MonoBehaviour
         CheckPiece(p);
         if (p.IsLocked()){
             p.Darken();
+            parent.LockControl.GetComponent<AudioSource>().Play();
         }
         else
         {
@@ -164,6 +167,7 @@ public class PuzzleBehavior : MonoBehaviour
 
     public void TriggerVictory(){
         Completed = true;
+        parent.FinishControl.GetComponent<AudioSource>().Play();
     }
 
     private void FadeCalc(GameObject gameObject, float st, float fi, float ft){

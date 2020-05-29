@@ -6,6 +6,11 @@ public class PuzzleMaker : MonoBehaviour
 {
     public GameObject quitButton;
     public GameObject levelSelect;
+    public GameObject LockControl;
+    public GameObject ClickControl;
+    public GameObject FinishControl;
+    public GameObject MusicControl;
+
 
     public List<PuzzleBehavior> puzzles;
     public PuzzleBehavior CurrentPuzzle;
