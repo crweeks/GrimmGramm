@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\PuzzleBehavior.cs" />
      <Compile Include="Assets\Scripts\PuzzleMaker.cs" />
      <Compile Include="Assets\Scripts\SceneManagement.cs" />
+     <Compile Include="Assets\Scripts\SoundControl.cs" />
      <Compile Include="Assets\Scripts\WolfAnimation.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>C:/Repositories/GrimmGramm/GrimmGramm/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
