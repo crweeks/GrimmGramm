@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1933859045097250975}
   - component: {fileID: 1933859045097250974}
+  - component: {fileID: 8489384477224131509}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: Untagged
@@ -215,6 +216,18 @@ MonoBehaviour:
   settings: {fileID: 8578219696449104967}
   levelSelect: {fileID: 132524130254425518}
   puzzleMaker: {fileID: 1933859045192414762}
+--- !u!114 &8489384477224131509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933859045097250961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b96b29a86f76e649961a8e48e3f5ffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1933859045192414765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2903,6 +2916,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_SelectedColor.a
       value: 0.078431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671695559651068437, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -248
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671695559651068437, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 212.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400969113865882537, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -321
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400969113865882537, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 206
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb9469e9ba36ca14595a2c44fe4ba776, type: 3}
