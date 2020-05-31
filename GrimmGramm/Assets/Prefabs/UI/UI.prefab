@@ -1427,6 +1427,66 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1933859044874867613}
     m_Modifications:
+    - target: {fileID: 2251302410822596104, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251302410822596104, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251302410822596104, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251302410822596104, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8489384477224131509}
+    - target: {fileID: 2251302410822596104, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 2251302410822596104, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 4548620393175143956, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4548620393175143956, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4548620393175143956, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4548620393175143956, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8489384477224131509}
+    - target: {fileID: 4548620393175143956, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 4548620393175143956, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 6655743763824575104, guid: eb9469e9ba36ca14595a2c44fe4ba776,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1852,6 +1912,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Colors.m_SelectedColor.a
       value: 0.078431375
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671695559651068437, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -248
+      objectReference: {fileID: 0}
+    - target: {fileID: 6671695559651068437, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 212.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400969113865882537, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -321
+      objectReference: {fileID: 0}
+    - target: {fileID: 7400969113865882537, guid: eb9469e9ba36ca14595a2c44fe4ba776,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 206
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb9469e9ba36ca14595a2c44fe4ba776, type: 3}
