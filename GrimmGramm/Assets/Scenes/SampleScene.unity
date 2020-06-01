@@ -470,7 +470,7 @@ PrefabInstance:
     - target: {fileID: 2657852606120033033, guid: e1878fb6c688f0a4dba1cfe7ccb541e1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -7
+      value: -6.9999695
       objectReference: {fileID: 0}
     - target: {fileID: 2657852606120033033, guid: e1878fb6c688f0a4dba1cfe7ccb541e1,
         type: 3}
@@ -575,7 +575,7 @@ PrefabInstance:
     - target: {fileID: 6240469963665708370, guid: e1878fb6c688f0a4dba1cfe7ccb541e1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -7
+      value: -6.9999695
       objectReference: {fileID: 0}
     - target: {fileID: 6240469963665708370, guid: e1878fb6c688f0a4dba1cfe7ccb541e1,
         type: 3}
@@ -590,32 +590,12 @@ PrefabInstance:
     - target: {fileID: 8262551536423014281, guid: e1878fb6c688f0a4dba1cfe7ccb541e1,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -7
+      value: -6.9999695
       objectReference: {fileID: 0}
     - target: {fileID: 8262551536423014281, guid: e1878fb6c688f0a4dba1cfe7ccb541e1,
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9101096529945036446, guid: e1878fb6c688f0a4dba1cfe7ccb541e1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -565.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 9101096529945036446, guid: e1878fb6c688f0a4dba1cfe7ccb541e1,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 341.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 9101096529945036446, guid: e1878fb6c688f0a4dba1cfe7ccb541e1,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 137
-      objectReference: {fileID: 0}
-    - target: {fileID: 9101096529945036446, guid: e1878fb6c688f0a4dba1cfe7ccb541e1,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 61.8
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2975538618888947370, guid: e1878fb6c688f0a4dba1cfe7ccb541e1, type: 3}
