@@ -5,7 +5,8 @@ using UnityEngine;
 public class Piece : MonoBehaviour
 {
     public PuzzleBehavior Parent;
-    //public Color PieceColor;
+    public Color AltColor;
+    public bool useAltColor;
     private Vector3 StartPosition;
     private Color orig;
     private float fadeTime = 0.0f;
@@ -109,7 +110,15 @@ public class Piece : MonoBehaviour
 
     public void Darken()
     {
-        GetComponent<SpriteRenderer>().color = new Color(orig.r * 0.6f, orig.g * 0.6f, orig.b * 0.6f);
+        if (useAltColor)
+        {
+            GetComponent<SpriteRenderer>().color = AltColor;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().color = new Color(orig.r * 0.6f, orig.g * 0.6f, orig.b * 0.6f);
+        }
+        
     }
 
     public void Lighten()
