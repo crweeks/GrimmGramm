@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\HawkAnimation.cs" />
      <Compile Include="Assets\Scripts\HawkAnimation2.cs" />
      <Compile Include="Assets\Scripts\HoodAnimation.cs" />
+     <Compile Include="Assets\Scripts\LevelMover.cs" />
      <Compile Include="Assets\Scripts\MainMenuAnimation.cs" />
      <Compile Include="Assets\Scripts\Piece.cs" />
      <Compile Include="Assets\Scripts\PuzzleAnimation.cs" />
